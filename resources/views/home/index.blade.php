@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="about-img" data-parallax="scroll" data-image-src=="{{asset('assets')}}/img/about.jpg"></div>
+                    <div class="about-img" data-parallax="scroll" data-image-src="{{asset('assets')}}/img/about.jpg"></div>
                 </div>
                 <div class="col-lg-6">
                     <div class="section-header">
@@ -131,7 +131,7 @@
     <!-- Service End -->
 
     <!-- Facts Start -->
-    <div class="facts" data-parallax="scroll" data-image-src=="{{asset('assets')}}/img/facts.jpg">
+    <div class="facts" data-parallax="scroll" data-image-src="{{asset('assets')}}/img/facts.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
@@ -185,7 +185,7 @@
             <div class="owl-carousel causes-carousel">
                 <div class="causes-item">
                     <div class="causes-img">
-                        <img src=="{{asset('assets')}}/img/causes-1.jpg" alt="Image">
+                        <img src="{{asset('assets')}}/img/causes-1.jpg" alt="Image">
                     </div>
                     <div class="causes-progress">
                         <div class="progress">
@@ -209,7 +209,7 @@
                 </div>
                 <div class="causes-item">
                     <div class="causes-img">
-                        <img src=="{{asset('assets')}}/img/causes-2.jpg" alt="Image">
+                        <img src="{{asset('assets')}}/img/causes-2.jpg" alt="Image">
                     </div>
                     <div class="causes-progress">
                         <div class="progress">
@@ -233,7 +233,7 @@
                 </div>
                 <div class="causes-item">
                     <div class="causes-img">
-                        <img src=="{{asset('assets')}}/img/causes-3.jpg" alt="Image">
+                        <img src="{{asset('assets')}}/img/causes-3.jpg" alt="Image">
                     </div>
                     <div class="causes-progress">
                         <div class="progress">
@@ -257,7 +257,7 @@
                 </div>
                 <div class="causes-item">
                     <div class="causes-img">
-                        <img src=="{{asset('assets')}}/img/causes-4.jpg" alt="Image">
+                        <img src="{{asset('assets')}}/img/causes-4.jpg" alt="Image">
                     </div>
                     <div class="causes-progress">
                         <div class="progress">
@@ -285,7 +285,7 @@
     <!-- Causes End -->
 
     <!-- Donate Start -->
-    <div class="donate" data-parallax="scroll" data-image-src=="{{asset('assets')}}/img/donate.jpg">
+    <div class="donate" data-parallax="scroll" data-image-src="{{asset('assets')}}/img/donate.jpg">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
@@ -342,7 +342,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="event-item">
-                        <img src=="{{asset('assets')}}/img/event-1.jpg" alt="Image">
+                        <img src="{{asset('assets')}}/img/event-1.jpg" alt="Image">
                         <div class="event-content">
                             <div class="event-meta">
                                 <p><i class="fa fa-calendar-alt"></i>01-Jan-45</p>
@@ -361,7 +361,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="event-item">
-                        <img src=="{{asset('assets')}}/img/event-2.jpg" alt="Image">
+                        <img src="{{asset('assets')}}/img/event-2.jpg" alt="Image">
                         <div class="event-content">
                             <div class="event-meta">
                                 <p><i class="fa fa-calendar-alt"></i>01-Jan-45</p>
@@ -394,7 +394,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src=="{{asset('assets')}}/img/team-1.jpg" alt="Team Image">
+                            <img src="{{asset('assets')}}/img/team-1.jpg" alt="Team Image">
                         </div>
                         <div class="team-text">
                             <h2>Donald John</h2>
@@ -411,7 +411,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src=="{{asset('assets')}}/img/team-2.jpg" alt="Team Image">
+                            <img src="{{asset('assets')}}/img/team-2.jpg" alt="Team Image">
                         </div>
                         <div class="team-text">
                             <h2>Adam Phillips</h2>
@@ -428,7 +428,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src=="{{asset('assets')}}/img/team-3.jpg" alt="Team Image">
+                            <img src="{{asset('assets')}}/img/team-3.jpg" alt="Team Image">
                         </div>
                         <div class="team-text">
                             <h2>Thomas Olsen</h2>
@@ -445,7 +445,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src=="{{asset('assets')}}/img/team-4.jpg" alt="Team Image">
+                            <img src="{{asset('assets')}}/img/team-4.jpg" alt="Team Image">
                         </div>
                         <div class="team-text">
                             <h2>James Alien</h2>
@@ -465,7 +465,7 @@
     <!-- Team End -->
 
     <!-- Volunteer Start -->
-    <div class="volunteer" data-parallax="scroll" data-image-src=="{{asset('assets')}}/img/volunteer.jpg">
+    <div class="volunteer" data-parallax="scroll" data-image-src="{{asset('assets')}}/img/volunteer.jpg">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
@@ -514,7 +514,7 @@
             <div class="owl-carousel testimonials-carousel">
                 <div class="testimonial-item">
                     <div class="testimonial-profile">
-                        <img src=="{{asset('assets')}}/img/testimonial-1.jpg" alt="Image">
+                        <img src="{{asset('assets')}}/img/testimonial-1.jpg" alt="Image">
                         <div class="testimonial-name">
                             <h3>Person Name</h3>
                             <p>Profession</p>
@@ -528,7 +528,7 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="testimonial-profile">
-                        <img src=="{{asset('assets')}}/img/testimonial-2.jpg" alt="Image">
+                        <img src="{{asset('assets')}}/img/testimonial-2.jpg" alt="Image">
                         <div class="testimonial-name">
                             <h3>Person Name</h3>
                             <p>Profession</p>
@@ -542,7 +542,7 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="testimonial-profile">
-                        <img src=="{{asset('assets')}}/img/testimonial-3.jpg" alt="Image">
+                        <img src="{{asset('assets')}}/img/testimonial-3.jpg" alt="Image">
                         <div class="testimonial-name">
                             <h3>Person Name</h3>
                             <p>Profession</p>
@@ -556,7 +556,7 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="testimonial-profile">
-                        <img src=="{{asset('assets')}}/img/testimonial-4.jpg" alt="Image">
+                        <img src="{{asset('assets')}}/img/testimonial-4.jpg" alt="Image">
                         <div class="testimonial-name">
                             <h3>Person Name</h3>
                             <p>Profession</p>
@@ -581,7 +581,7 @@
                 <h2>Contact for any query</h2>
             </div>
             <div class="contact-img">
-                <img src=="{{asset('assets')}}/img/contact.jpg" alt="Image">
+                <img src="{{asset('assets')}}/img/contact.jpg" alt="Image">
             </div>
             <div class="contact-form">
                 <div id="success"></div>
@@ -622,7 +622,7 @@
                 <div class="col-lg-4">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src=="{{asset('assets')}}/img/blog-1.jpg" alt="Image">
+                            <img src="{{asset('assets')}}/img/blog-1.jpg" alt="Image">
                         </div>
                         <div class="blog-text">
                             <h3><a href="#">Lorem ipsum dolor sit</a></h3>
@@ -639,7 +639,7 @@
                 <div class="col-lg-4">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src=="{{asset('assets')}}/img/blog-2.jpg" alt="Image">
+                            <img src="{{asset('assets')}}/img/blog-2.jpg" alt="Image">
                         </div>
                         <div class="blog-text">
                             <h3><a href="#">Lorem ipsum dolor sit</a></h3>
@@ -656,7 +656,7 @@
                 <div class="col-lg-4">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src=="{{asset('assets')}}/img/blog-3.jpg" alt="Image">
+                            <img src="{{asset('assets')}}/img/blog-3.jpg" alt="Image">
                         </div>
                         <div class="blog-text">
                             <h3><a href="#">Lorem ipsum dolor sit</a></h3>
