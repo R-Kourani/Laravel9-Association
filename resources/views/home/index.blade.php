@@ -2,9 +2,8 @@
 
 @section('title', 'Charity project')
 
-
 @section('slider')
-    @include("home.slider")
+    @include('home.slider')
 @endsection
 
 @section('content')
@@ -185,7 +184,7 @@
             <div class="owl-carousel causes-carousel">
                 <div class="causes-item">
                     <div class="causes-img">
-                        <img src="{{asset('assets')}}/img/causes-1.jpg" alt="Image">
+                        <img src="{{asset('assets')}}/img/causes-1.jpg" alt="Image" style="width:128px;height:128px;>
                     </div>
                     <div class="causes-progress">
                         <div class="progress">

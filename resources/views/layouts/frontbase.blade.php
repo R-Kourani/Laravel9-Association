@@ -30,7 +30,7 @@
 @include("home.header")
 
 @section('slider')
-
+    @include('home.header')
 @show
 
 @yield('content')
