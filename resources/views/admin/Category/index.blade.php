@@ -35,16 +35,16 @@
                                 <tbody>
                                 @foreach($data as $rs)
                                 <tr>
-                                    <td>{{$rs->Id}}</td>
+                                    <td>{{$rs->id}}</td>
                                     <td>{{$rs->Name}}</td>
                                     <td>{{$rs->Email}}</td>
                                     <td>{{$rs->Job}}</td>
                                     <td>{{$rs->Gender}}</td>
                                     <td>{{$rs->Box}}</td>
                                     <td>{{$rs->Status}}</td>
-                                    <td><a href="/admin/category/edit{{$rs->id}}" class="btn btn-xs btn-info">Edit</a></td>
-                                    <td><a href="/admin/category/edit{{$rs->id}}" class="btn btn-xs btn-danger">Delete</a></td>
-                                    <td><a href="/admin/category/edit{{$rs->id}}" class="btn btn-xs btn-success">Show</a></td>
+                                    <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-xs btn-info">Edit</a></td>
+                                    <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-xs btn-danger">Delete</a></td>
+                                    <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-xs btn-success">Show</a></td>
                                 </tr>
                                 @endforeach
                                 </tbody>
