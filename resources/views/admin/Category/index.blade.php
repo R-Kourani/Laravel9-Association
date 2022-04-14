@@ -43,8 +43,9 @@
                                     <td>{{$rs->Box}}</td>
                                     <td>{{$rs->Status}}</td>
                                     <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-xs btn-info">Edit</a></td>
-                                    <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-xs btn-danger">Delete</a></td>
-                                    <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-xs btn-success">Show</a></td>
+                                    <td><a href="/admin/category/destroy/{{$rs->id}}" class="btn btn-xs btn-danger"
+                                           onclick="return confirm('Deleting!! Are you sure?')">Delete</a></td>
+                                    <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-xs btn-success">Show</a></td>
                                 </tr>
                                 @endforeach
                                 </tbody>
