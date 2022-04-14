@@ -49,6 +49,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                            <a href="/admin/category/create" class="btn btn-xs btn-info">Add Member</a>
                         </div>
                     </div>
                 </div>
