@@ -42,15 +42,15 @@
                                     <td>{{$rs->Gender}}</td>
                                     <td>{{$rs->Box}}</td>
                                     <td>{{$rs->Status}}</td>
-                                    <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-xs btn-info">Edit</a></td>
-                                    <td><a href="/admin/category/destroy/{{$rs->id}}" class="btn btn-xs btn-danger"
+                                    <td><a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-xs btn-info">Edit</a></td>
+                                    <td><a href="{{route('admin.category.destroy',['id'=>$data->id])}}" class="btn btn-xs btn-danger"
                                            onclick="return confirm('Deleting!! Are you sure?')">Delete</a></td>
-                                    <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-xs btn-success">Show</a></td>
+                                    <td><a href="{{route('admin.category.show', ['id'=>$data->id])}}" class="btn btn-xs btn-success">Show</a></td>
                                 </tr>
                                 @endforeach
                                 </tbody>
                             </table>
-                            <a href="/admin/category/create" class="btn btn-xs btn-info">Add Member</a>
+                            <a href="{{route('admin.category.create')}}" class="btn btn-xs btn-info">Add Member</a>
                         </div>
                     </div>
                 </div>

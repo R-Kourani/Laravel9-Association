@@ -14,7 +14,7 @@
                             <div class="panel panel-info">
                                 <div class="panel-heading"> Members Registration FORM</div>
                                 <div class="panel-body">
-                                    <form action="/admin/category/store" role="form" method="post">
+                                    <form action="{{route('admin.category.store')}}" role="form" method="post">
                                         @csrf
                                         <div class="form-group">
                                             <label for="Name">Enter Name</label>

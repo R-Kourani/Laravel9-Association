@@ -14,7 +14,7 @@
                             <div class="panel panel-info">
                                 <div class="panel-heading">Edit {{$data->Name}} </div>
                                 <div class="panel-body">
-                                    <form action="/admin/category/update/{{$data->id}}" role="form" method="post">
+                                    <form action="{{route('admin.category.update', ['id'=>$data->id])}}" role="form" method="post">
                                         @csrf
                                         <div class="form-group">
                                             <label for="Name">Enter Name</label>

@@ -46,8 +46,8 @@
                                     </tr>
                                     </tbody>
                                 </table>
-                                <a href="/admin/category/edit/{{$data->id}}" class="btn btn-xs btn-info">Edit Member</a>
-                                <a href="/admin/category/destroy/{{$data->id}}" class="btn btn-xs btn-info"
+                                <a href="{{route('admin.category.edit', ['id'=>$data->id])}}" class="btn btn-xs btn-info">Edit Member</a>
+                                <a href="{{route('admin.category.destroy', ['id'=>$data->id])}}" class="btn btn-xs btn-info"
                                    onclick="return confirm('Deleting!! Are you sure?')">Delete Member</a>
                             </div>
                         </div>
