@@ -17,6 +17,17 @@
                                     <form action="{{route('admin.menu.update', ['id'=>$data->id])}}" role="form" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
+                                            <label for="Title">Parent Menu</label>
+                                            <select class="form-control select2" name="parent_id">
+                                                <option value="0" selected="selected">Main Menu</option>
+                                                @foreach($datalist as $rs)
+                                                    <option value="{{$rs->id}}" @if($rs->id == $data->parent_id) selected="selected" @endif>
+                                                        {{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs, $rs->Title}}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="Title">Title</label>
                                             <input class="form-control" type="text" id="Title" name="Title" value="{{$data->Title}}">
                                         </div>
@@ -33,8 +44,8 @@
                                             <div class="input-group">
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input" id="Image" name="Image">
-                                                <div>
-                                            <div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group" name="Status">
                                             <label for="Status">Status</label>

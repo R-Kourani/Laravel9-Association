@@ -9,6 +9,22 @@ use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
+
+    protected $appends = [
+        'getParentsTree'
+    ];
+
+    public static function getParentsTree($menu, $Title)
+    {
+        if ($menu->parent_id==0)
+        {
+            return $Title;
+        }
+        $parent=Menu::find($menu->parent_id);
+        $Title= $parent->$Title .' > '. $Title;
+        return MenuController::getParentsTree($parent, $Title);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +63,7 @@ class MenuController extends Controller
     {
         //
         $data= new Menu();
-        $data->parent_id = 0;
+        $data->parent_id = $request->parent_id;
         $data->Title = $request->Title;
         $data->Keywords = $request->Keywords;
         $data->Description = $request->Description;
@@ -85,8 +101,10 @@ class MenuController extends Controller
     {
         //
         $data= Menu::find($id);
+        $datalist= Menu::all();
         return view('admin.menu.edit',[
-            'data' => $data
+            'data' => $data,
+            'datalist' => $datalist
 
         ]);
     }
@@ -102,12 +120,12 @@ class MenuController extends Controller
     {
         //
         $data= Menu::find($id);
-        $data->parent_id = 0;
+        $data->parent_id = $request->parent_id;
         $data->Title = $request->Title;
         $data->Keywords = $request->Keywords;
         $data->Description = $request->Description;
         if ($request->file('Image')){
-            $data->Image= $request->file('Image')->store('Image');
+            $data->Image= $request->file('Image')->store('image');
         }
         $data->Status = $request->Status;
         $data->save();

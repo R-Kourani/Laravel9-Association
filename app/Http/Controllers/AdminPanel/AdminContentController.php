@@ -54,12 +54,12 @@ class AdminContentController extends Controller
         $data->Keywords = $request->Keywords;
         $data->Description = $request->Description;
         if ($request->file('Image')){
-            $data->Image= $request->file('Image')->store('Image');
+            $data->Image= $request->file('Image')->store('image');
         }
         $data->Detail = $request->Detail;
         $data->Type = $request->Type;
         $data->Publisher = $request->Publisher;
-        $data->Target = $request->Target;
+        $data->Aim = $request->Aim;
         $data->save();
         return redirect('admin/content');
 
@@ -115,12 +115,12 @@ class AdminContentController extends Controller
         $data->Keywords = $request->Keywords;
         $data->Description = $request->Description;
         if ($request->file('Image')){
-            $data->Image= $request->file('Image')->store('Image');
+            $data->Image= $request->file('Image')->store('image');
         }
         $data->Detail = $request->Detail;
         $data->Type = $request->Type;
         $data->Publisher = $request->Publisher;
-        $data->Target = $request->Target;
+        $data->Aim = $request->Aim;
         $data->save();
         return redirect('admin/content');
     }
@@ -135,6 +135,7 @@ class AdminContentController extends Controller
     {
         //
         $data = Content::find($id);
+        Storage::delete($data->Image);
         $data->delete();
         return redirect('admin/content');
     }

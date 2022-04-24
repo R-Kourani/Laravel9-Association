@@ -17,6 +17,15 @@
                                     <form action="{{route('admin.menu.store')}}" role="form" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
+                                            <label for="Title">Parent Menu</label>
+                                           <select class="form-control select2" name="parent_id">
+                                               <option value="0" selected="selected">Main Menu</option>
+                                               @foreach($data as $rs)
+                                                   <option value="{{$rs->id}}"> {{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs, $rs->Title}} </option>
+                                               @endforeach
+                                           </select>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="Title">Title</label>
                                             <input class="form-control" type="text" id="Title" name="Title">
                                         </div>

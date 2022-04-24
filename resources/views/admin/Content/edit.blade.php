@@ -14,7 +14,7 @@
                             <div class="panel panel-info">
                                 <div class="panel-heading">Edit {{$data->Title}} </div>
                                 <div class="panel-body">
-                                    <form action="{{route('admin.content.update', ['id'=>$data->id])}}" role="form" method="post">
+                                    <form action="{{route('admin.content.update', ['id'=>$data->id])}}" role="form" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
                                             <label for="Title">Title</label>
@@ -37,7 +37,7 @@
                                             <input class="form-control" type="text" id="Description" name="Description" value="{{$data->Description}}">
                                         </div>
                                         <div class="form-group">
-                                            <label for="Image">Image</label><br>
+                                            <label for="exampleInputFile">Image</label><br>
                                             <div class="input-group">
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input" id="Image" name="Image">
@@ -49,8 +49,8 @@
                                              <input class="form-control" type="text" id="Publisher" name="Publisher" value="{{$data->Publisher}}">
                                         </div>
                                         <div class="form-group">
-                                             <label for="Target">Target</label>
-                                             <input class="form-control" type="text" id="Target" name="Target" value="{{$data->Target}}">
+                                             <label for="Aim">Aim</label>
+                                             <input class="form-control" type="text" id="Aim" name="Aim" value="{{$data->Aim}}">
                                         </div>
                                         <div class="form-group" name="Status">
                                             <label for="Status">Status</label>

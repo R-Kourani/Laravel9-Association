@@ -26,7 +26,7 @@
                                     <th>Description</th>
                                     <th>Image</th>
                                     <th>Publisher</th>
-                                    <th>Target</th>
+                                    <th> Aim</th>
                                     <th>Status</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
@@ -46,7 +46,7 @@
                                         @endif
                                     </td>
                                     <td>{{$rs->Publisher}}</td>
-                                    <td>{{$rs->Target}}</td>
+                                    <td>{{$rs->Aim}}</td>
                                     <td>{{$rs->Status}}</td>
                                     <td><a href="{{route('admin.content.edit',['id'=>$rs->id])}}" class="btn btn-xs btn-info">Edit</a></td>
                                     <td><a href="{{route('admin.content.destroy',['id'=>$rs->id])}}" class="btn btn-xs btn-danger"

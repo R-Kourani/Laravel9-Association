@@ -28,7 +28,7 @@
                                         <th style="width:100px">Description</th>
                                         <th style="width:74px">Image</th>
                                         <th>Publisher</th>
-                                        <th>Target</th>
+                                        <th>Aim</th>
                                         <th>Status</th>
                                         <th style="width:100px">Create date</th>
                                         <th style="width:100px">Update date</th>
@@ -41,12 +41,9 @@
                                         <td>{{$data->Title}}</td>
                                         <td>{{$data->Keywords}}</td>
                                         <td>{{$data->Description}}</td>
-                                        <td> @if ($data->Image)
-                                             <img src="{{Storage::url($data->Image)}}" style="height: 100px">
-                                            @endif
-                                        </td>
+                                        <td>{{$data->Image}}</td>
                                         <td>{{$data->Publisher}}</td>
-                                        <td>{{$data->Target}}</td>
+                                        <td>{{$data->Aim}}</td>
                                         <td>{{$data->Status}}</td>
                                         <td>{{$data->created_at}}</td>
                                         <td>{{$data->updated_at}}</td>
