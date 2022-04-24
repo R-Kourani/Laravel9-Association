@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminPanel;
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
@@ -50,7 +51,9 @@ class MenuController extends Controller
         $data->Title = $request->Title;
         $data->Keywords = $request->Keywords;
         $data->Description = $request->Description;
-        $data->Image = $request->Image;
+        if ($request->file('Image')){
+            $data->Image= $request->file('Image')->store('image');
+        }
         $data->Status = $request->Status;
         $data->save();
         return redirect('admin/menu');
@@ -103,7 +106,9 @@ class MenuController extends Controller
         $data->Title = $request->Title;
         $data->Keywords = $request->Keywords;
         $data->Description = $request->Description;
-        $data->Image = $request->Image;
+        if ($request->file('Image')){
+            $data->Image= $request->file('Image')->store('Image');
+        }
         $data->Status = $request->Status;
         $data->save();
         return redirect('admin/menu');
@@ -115,10 +120,11 @@ class MenuController extends Controller
      * @param  \App\Models\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Menu $menu)
+    public function destroy(Menu $menu, $id)
     {
         //
         $data = Menu::find($id);
+        Storage::delete($data->Image);
         $data->delete();
         return redirect('admin/menu');
     }

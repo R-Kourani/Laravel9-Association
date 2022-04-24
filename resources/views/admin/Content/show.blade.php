@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Show Menu')
+@section('title', 'Show Content')
 
 @section('content')
         <!-- /. NAV SIDE  -->
@@ -23,30 +23,39 @@
                                     <tr>
                                         <th style="width:75px">Id</th>
                                         <th>Title</th>
-                                        <th>Keywords</th>
-                                        <th style="width:75px">Description</th>
-                                        <th style="width:100px">Image</th>
+                                        <th>Type</th>
+                                        <th style="width:100px">Keywords</th>
+                                        <th style="width:100px">Description</th>
+                                        <th style="width:74px">Image</th>
+                                        <th>Publisher</th>
+                                        <th>Target</th>
                                         <th>Status</th>
                                         <th style="width:100px">Create date</th>
                                         <th style="width:100px">Update date</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr class="success">
+                                    <tr class="bg-purple-400">
                                         <td>{{$data->id}}</td>
+                                        <td>{{$data->Type}}</td>
                                         <td>{{$data->Title}}</td>
                                         <td>{{$data->Keywords}}</td>
                                         <td>{{$data->Description}}</td>
-                                        <td>{{$data->Image}}</td>
+                                        <td> @if ($data->Image)
+                                             <img src="{{Storage::url($data->Image)}}" style="height: 100px">
+                                            @endif
+                                        </td>
+                                        <td>{{$data->Publisher}}</td>
+                                        <td>{{$data->Target}}</td>
                                         <td>{{$data->Status}}</td>
                                         <td>{{$data->created_at}}</td>
                                         <td>{{$data->updated_at}}</td>
                                     </tr>
                                     </tbody>
                                 </table>
-                                <a href="{{route('admin.menu.edit', ['id'=>$data->id])}}" class="btn btn-xs btn-info">Edit Menu</a>
-                                <a href="{{route('admin.menu.destroy', ['id'=>$data->id])}}" class="btn btn-xs btn-info"
-                                   onclick="return confirm('Deleting!! Are you sure?')">Delete from the Menu</a>
+                                <a href="{{route('admin.content.edit', ['id'=>$data->id])}}" class="btn btn-xs btn-info">Edit Content</a>
+                                <a href="{{route('admin.content.destroy', ['id'=>$data->id])}}" class="btn btn-xs btn-info"
+                                   onclick="return confirm('Deleting!! Are you sure?')">Delete Content</a>
                             </div>
                         </div>
                     </div>

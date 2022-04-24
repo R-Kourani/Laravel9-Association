@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Menu')
+@section('title', 'Content')
 
 @section('content')
         <!-- /. NAV SIDE  -->
@@ -14,7 +14,7 @@
                             <div class="panel panel-info">
                                 <div class="panel-heading">Content Form</div>
                                 <div class="panel-body">
-                                    <form action="{{route('admin.menu.store')}}" role="form" method="post">
+                                    <form action="{{route('admin.content.store')}}" role="form" method="post">
                                         @csrf
                                         <div class="form-group">
                                             <label for="Title">Title</label>
@@ -41,8 +41,8 @@
                                             <div class="input-group">
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input" id="Image" name="Image"><br>
-                                                <div>
-                                            <div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                                 <label for="Publisher">Publisher</label>
@@ -62,6 +62,7 @@
                                         </div>
                                         <br>
                                         <button type="submit" class="btn btn-info">Submit</button>
+
                                     </form>
                               </div>
                             </div>

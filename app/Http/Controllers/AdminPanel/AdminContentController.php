@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Menu;
 use App\Models\Content;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminContentController extends Controller
 {
@@ -58,7 +59,7 @@ class AdminContentController extends Controller
         $data->Detail = $request->Detail;
         $data->Type = $request->Type;
         $data->Publisher = $request->Publisher;
-        $data->Taregt = $request->Target;
+        $data->Target = $request->Target;
         $data->save();
         return redirect('admin/content');
 
@@ -119,7 +120,7 @@ class AdminContentController extends Controller
         $data->Detail = $request->Detail;
         $data->Type = $request->Type;
         $data->Publisher = $request->Publisher;
-        $data->Taregt = $request->Target;
+        $data->Target = $request->Target;
         $data->save();
         return redirect('admin/content');
     }

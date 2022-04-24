@@ -21,7 +21,6 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Menu_id</th>
                                     <th>Title</th>
                                     <th>Type</th>
                                     <th>Description</th>

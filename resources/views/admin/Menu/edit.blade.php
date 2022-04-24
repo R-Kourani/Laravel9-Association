@@ -14,7 +14,7 @@
                             <div class="panel panel-info">
                                 <div class="panel-heading">Edit {{$data->Title}} </div>
                                 <div class="panel-body">
-                                    <form action="{{route('admin.menu.update', ['id'=>$data->id])}}" role="form" method="post">
+                                    <form action="{{route('admin.menu.update', ['id'=>$data->id])}}" role="form" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
                                             <label for="Title">Title</label>
@@ -29,7 +29,7 @@
                                             <input class="form-control" type="text" id="Description" name="Description" value="{{$data->Description}}">
                                         </div>
                                         <div class="form-group">
-                                            <label for="Image">Image</label><br>
+                                            <label for="exampleInputFile">Image</label><br>
                                             <div class="input-group">
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input" id="Image" name="Image">
