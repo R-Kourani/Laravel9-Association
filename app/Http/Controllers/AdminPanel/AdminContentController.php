@@ -60,6 +60,7 @@ class AdminContentController extends Controller
         $data->Type = $request->Type;
         $data->Publisher = $request->Publisher;
         $data->Aim = $request->Aim;
+        $data->Status = $request->Status;
         $data->save();
         return redirect('admin/content');
 
@@ -121,6 +122,7 @@ class AdminContentController extends Controller
         $data->Type = $request->Type;
         $data->Publisher = $request->Publisher;
         $data->Aim = $request->Aim;
+        $data->Status = $request->Status;
         $data->save();
         return redirect('admin/content');
     }

@@ -22,7 +22,7 @@
                                                 <option value="0" selected="selected">Main Menu</option>
                                                 @foreach($datalist as $rs)
                                                     <option value="{{$rs->id}}" @if($rs->id == $data->parent_id) selected="selected" @endif>
-                                                        {{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs, $rs->Title}}
+                                                        {{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs, $rs->Title)}}
                                                     </option>
                                                 @endforeach
                                             </select>

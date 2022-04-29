@@ -26,7 +26,7 @@
                                     <th>Description</th>
                                     <th>Image</th>
                                     <th>Publisher</th>
-                                    <th> Aim</th>
+                                    <th>Aim</th>
                                     <th>Status</th>
                                     <th>Edit</th>
                                     <th>Delete</th>

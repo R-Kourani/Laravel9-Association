@@ -21,7 +21,7 @@
                                            <select class="form-control select2" name="parent_id">
                                                <option value="0" selected="selected">Main Menu</option>
                                                @foreach($data as $rs)
-                                                   <option value="{{$rs->id}}"> {{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs, $rs->Title}} </option>
+                                                   <option value="{{$rs->id}}"> {{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs, $rs->Title)}} </option>
                                                @endforeach
                                            </select>
                                         </div>

@@ -24,7 +24,8 @@ return new class extends Migration
             $table->longText('Detail')->nullable();
             $table->string('Type')->nullable();
             $table->string('Publisher')->nullable();
-            $table->string('Target')->nullable();
+            $table->string('Aim')->nullable();
+            $table->string('Status')->nullable();
             $table->timestamps();
         });
     }

@@ -34,11 +34,11 @@
                                 @foreach($data as $rs)
                                 <tr>
                                     <td>{{$rs->id}}</td>
-                                    <td>{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs,$rs->Title)}}</td>
+                                    <td>{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs, $rs->Title)}}</td>
                                     <td>{{$rs->Title}}</td>
                                     <td>
                                         @if ($rs->Image)
-                                            <img src="{{Storage::url($rs->Image)}}" style="height: 40px" >
+                                            <img src="{{Storage::url($rs->Image)}}" style="height: 40px">
                                         @endif
                                     </td>
                                     <td>{{$rs->Status}}</td>
