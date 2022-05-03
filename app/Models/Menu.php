@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     use HasFactory;
+    #one to one relation
+    public function contents()
+    {
+        return $this->hasOne(Content::class);
+    }
 }

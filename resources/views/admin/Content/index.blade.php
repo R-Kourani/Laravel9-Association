@@ -21,6 +21,7 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
+                                    <th>Menu</th>
                                     <th>Title</th>
                                     <th>Type</th>
                                     <th>Description</th>
@@ -37,6 +38,7 @@
                                 @foreach($data as $rs)
                                 <tr>
                                     <td>{{$rs->id}}</td>
+                                    <td>{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs, $rs->Title)}}</td>
                                     <td>{{$rs->Title}}</td>
                                     <td>{{$rs->Type}}</td>
                                     <td>{{$rs->Description}}</td>

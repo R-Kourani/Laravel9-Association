@@ -15,34 +15,47 @@
                         <div class="panel-heading">
                              {{$data->Title}}
                         </div>
-
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
-                                    <tr>
-                                        <th style="width:75px">Id</th>
-                                        <th>Title</th>
-                                        <th>Keywords</th>
-                                        <th style="width:75px">Description</th>
-                                        <th style="width:100px">Image</th>
-                                        <th>Status</th>
-                                        <th style="width:100px">Create date</th>
-                                        <th style="width:100px">Update date</th>
-                                    </tr>
+                                        <tr>
+                                            <th style="width:75px">Id</th>
+                                            <td>{{$data->id}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Parent</th>
+                                            <td>{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($data, $data->Title)}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Title</th>
+                                            <td>{{$data->Title}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Keywords</th>
+                                            <td>{{$data->Keywords}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Description</th>
+                                            <td>{{$data->Description}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:100px">Image</th>
+                                            <td>{{$data->Image}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Status</th>
+                                            <td>{{$data->Status}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:100px">Create date</th>
+                                            <td>{{$data->created_at}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:100px">Update date</th>
+                                            <td>{{$data->updated_at}}</td>
+                                        </tr>
                                     </thead>
-                                    <tbody>
-                                    <tr class="success">
-                                        <td>{{$data->id}}</td>
-                                        <td>{{$data->Title}}</td>
-                                        <td>{{$data->Keywords}}</td>
-                                        <td>{{$data->Description}}</td>
-                                        <td>{{$data->Image}}</td>
-                                        <td>{{$data->Status}}</td>
-                                        <td>{{$data->created_at}}</td>
-                                        <td>{{$data->updated_at}}</td>
-                                    </tr>
-                                    </tbody>
                                 </table>
                                 <a href="{{route('admin.menu.edit', ['id'=>$data->id])}}" class="btn btn-xs btn-info">Edit Menu</a>
                                 <a href="{{route('admin.menu.destroy', ['id'=>$data->id])}}" class="btn btn-xs btn-info"

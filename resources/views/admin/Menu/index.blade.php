@@ -21,7 +21,7 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Parent</th>
+                                    <th style="width: 150px">Parent</th>
                                     <th>Title</th>
                                     <th>Image</th>
                                     <th>Status</th>

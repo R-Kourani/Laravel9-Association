@@ -17,7 +17,7 @@
                                     <form action="{{route('admin.menu.update', ['id'=>$data->id])}}" role="form" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="Title">Parent Menu</label>
+                                            <label>Parent Menu</label>
                                             <select class="form-control select2" name="parent_id">
                                                 <option value="0" selected="selected">Main Menu</option>
                                                 @foreach($datalist as $rs)

@@ -20,35 +20,55 @@
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
-                                    <tr>
-                                        <th style="width:75px">Id</th>
-                                        <th>Title</th>
-                                        <th>Type</th>
-                                        <th style="width:100px">Keywords</th>
-                                        <th style="width:100px">Description</th>
-                                        <th style="width:74px">Image</th>
-                                        <th>Publisher</th>
-                                        <th>Aim</th>
-                                        <th>Status</th>
-                                        <th style="width:100px">Create date</th>
-                                        <th style="width:100px">Update date</th>
-                                    </tr>
+                                        <tr>
+                                            <th style="width:75px">Id</th>
+                                            <td>{{$data->id}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Menu</th>
+                                            <td>{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($data->menu, $data->menu->Title)}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Title</th>
+                                            <td>{{$data->Title}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Type</th>
+                                            <td>{{$data->Type}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:100px">Keywords</th>
+                                            <td>{{$data->Keywords}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:100px">Description</th>
+                                            <td>{{$data->Description}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:100px">Image</th>
+                                            <td>{{$data->Image}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Publisher</th>
+                                            <td>{{$data->Publisher}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Aim</th>
+                                            <td>{{$data->Aim}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Status</th>
+                                            <td>{{$data->Status}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:100px">Create date</th>
+                                            <td>{{$data->created_at}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:100px">Update date</th>
+                                            <td>{{$data->updated_at}}</td>
+                                        </tr>
                                     </thead>
-                                    <tbody>
-                                    <tr class="bg-purple-400">
-                                        <td>{{$data->id}}</td>
-                                        <td>{{$data->Type}}</td>
-                                        <td>{{$data->Title}}</td>
-                                        <td>{{$data->Keywords}}</td>
-                                        <td>{{$data->Description}}</td>
-                                        <td>{{$data->Image}}</td>
-                                        <td>{{$data->Publisher}}</td>
-                                        <td>{{$data->Aim}}</td>
-                                        <td>{{$data->Status}}</td>
-                                        <td>{{$data->created_at}}</td>
-                                        <td>{{$data->updated_at}}</td>
-                                    </tr>
-                                    </tbody>
                                 </table>
                                 <a href="{{route('admin.content.edit', ['id'=>$data->id])}}" class="btn btn-xs btn-info">Edit Content</a>
                                 <a href="{{route('admin.content.destroy', ['id'=>$data->id])}}" class="btn btn-xs btn-info"
