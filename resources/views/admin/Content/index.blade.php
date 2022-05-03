@@ -26,6 +26,7 @@
                                     <th>Type</th>
                                     <th>Description</th>
                                     <th>Image</th>
+                                    <th>Image Gallery</th>
                                     <th>Publisher</th>
                                     <th>Aim</th>
                                     <th>Status</th>
@@ -47,6 +48,11 @@
                                             <img src="{{Storage::url($rs->Image)}}" style="height: 40px" >
                                         @endif
                                     </td>
+                                    <td> <a href="{{route('admin.image.index',['cid'=>$rs->id])}}"
+                                            onclick="return !window.open(this.href,'','top=50 left=100 width= 1100 height=700')">
+                                         <img src="{{asset('assets')}}/img/gallery.jpg" style="height: 40px">
+                                        </a>
+                                    </td>>
                                     <td>{{$rs->Publisher}}</td>
                                     <td>{{$rs->Aim}}</td>
                                     <td>{{$rs->Status}}</td>
