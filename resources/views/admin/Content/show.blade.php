@@ -42,15 +42,15 @@
                                         </tr>
                                         <tr>
                                             <th style="width:100px">Description</th>
-                                            <td>{{$data->Description}}</td>
+                                            <td>{!!$data->Description!!}</td>
                                         </tr>
                                         <tr>
                                             <th style="width:100px">Image</th>
                                             <td>{{$data->Image}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Publisher</th>
-                                            <td>{{$data->Publisher}}</td>
+                                            <th>Detail</th>
+                                            <td>{{$data->Detail}}</td>
                                         </tr>
                                         <tr>
                                             <th>Aim</th>

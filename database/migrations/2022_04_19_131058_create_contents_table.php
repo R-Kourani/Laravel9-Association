@@ -18,12 +18,11 @@ return new class extends Migration
             $table->foreignId('menu_id')->nullable();
             $table->foreignId('user_id')->nullable();
             $table->string('Title');
+            $table->string('Type');
             $table->string('Keywords')->nullable();
             $table->string('Description')->nullable();
             $table->string('Image')->nullable();
             $table->longText('Detail')->nullable();
-            $table->string('Type')->nullable();
-            $table->string('Publisher')->nullable();
             $table->string('Aim')->nullable();
             $table->string('Status')->nullable();
             $table->timestamps();

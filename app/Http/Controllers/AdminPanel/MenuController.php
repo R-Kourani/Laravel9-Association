@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class MenuController extends Controller
 {
 
-    protected $appends = [
+    protected $appends=[
         'getParentsTree'
     ];
 
@@ -21,7 +21,7 @@ class MenuController extends Controller
             return $Title;
         }
         $parent=Menu::find($menu->parent_id);
-        $Title= $parent->$Title .' > '. $Title;
+        $Title=$parent->Title.'>'.$Title;
         return MenuController::getParentsTree($parent, $Title);
     }
 

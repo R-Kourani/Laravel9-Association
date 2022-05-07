@@ -35,7 +35,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="Description">Description</label>
-                                            <input class="form-control" type="text" id="Description" name="Description">
+                                            <textarea class="form-control" type="textarea" id="Description" name="Description"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputFile">Image</label><br>

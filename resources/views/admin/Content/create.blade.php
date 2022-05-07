@@ -1,6 +1,9 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Content')
+@section('title', 'Add Content')
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
 
 @section('content')
         <!-- /. NAV SIDE  -->
@@ -16,6 +19,14 @@
                                 <div class="panel-body">
                                     <form action="{{route('admin.content.store')}}" role="form" method="post" enctype="multipart/form-data">
                                         @csrf
+                                        <div class="form-group">
+                                            <label >Parent Content</label>
+                                            <select class="form-control select2"name="menu_id">
+                                                @foreach($data as $rs)
+                                                    <option value="{{$rs->id}}"> {{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs,$rs->Title)}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                         <div class="form-group">
                                             <label for="Title">Title</label>
                                             <input class="form-control" type="text" id="Title" name="Title">
@@ -34,7 +45,17 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="Description">Description</label>
-                                            <input class="form-control" type="text" id="Description" name="Description">
+                                            <textarea class="textarea" id="Description" name="Description"></textarea>
+                                            <script>
+                                                ClassicEditor
+                                                    .create( document.querySelector( '#Description' ) )
+                                                    .then( editor => {
+                                                        console.log( editor );
+                                                    } )
+                                                    .catch( error => {
+                                                        console.error( error );
+                                                    } );
+                                            </script>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputFile">Image</label><br>
@@ -45,8 +66,18 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                                <label for="Publisher">Publisher</label>
-                                                <input class="form-control" type="text" id="Publisher" name="Publisher">
+                                            <label for="Description">Detail</label>
+                                            <textarea class="textarea" id="Detail" name="Detail"></textarea>
+                                            <script>
+                                                ClassicEditor
+                                                    .create( document.querySelector( '#Detail' ) )
+                                                    .then( editor => {
+                                                        console.log( editor );
+                                                    } )
+                                                    .catch( error => {
+                                                        console.error( error );
+                                                    } );
+                                            </script>
                                         </div>
                                         <div class="form-group">
                                                 <label for="Aim">Aim</label>

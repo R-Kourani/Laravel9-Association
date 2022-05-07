@@ -1,7 +1,9 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Edit Content')
-
+@section('title', 'Edit Content:'.$data->Title)
+@section('head')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+@endsection
 @section('content')
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
@@ -34,7 +36,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="Description">Description</label>
-                                            <input class="form-control" type="text" id="Description" name="Description" value="{{$data->Description}}">
+                                            <textarea class="textarea" id="Description" name="Description">{{$data->Description}}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputFile">Image</label><br>
@@ -45,8 +47,8 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                             <label for="Publisher">Publisher</label>
-                                             <input class="form-control" type="text" id="Publisher" name="Publisher" value="{{$data->Publisher}}">
+                                            <label for="Detail">Detail</label>
+                                            <textarea class="textarea" id="Detail" name="Detail">{{$data->Detail}}</textarea>
                                         </div>
                                         <div class="form-group">
                                              <label for="Aim">Aim</label>
@@ -72,4 +74,13 @@
             <!-- /. PAGE WRAPPER  -->
         </div>
 
+@endsection
+@section('foot')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+       $(function (){
+          $('.textarea').summernote()
+
+       })
+    </script>
 @endsection

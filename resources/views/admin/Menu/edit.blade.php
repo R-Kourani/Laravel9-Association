@@ -37,7 +37,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="Description">Description</label>
-                                            <input class="form-control" type="text" id="Description" name="Description" value="{{$data->Description}}">
+                                            <textarea class="form-control" type="text" id="Description" name="Description">{{$data->Description}}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputFile">Image</label><br>
