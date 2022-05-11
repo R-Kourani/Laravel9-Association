@@ -45,7 +45,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="Description">Description</label>
-                                            <textarea class="textarea" id="Description" name="Description"></textarea>
+                                            <input class="form-control" type="text" id="Description" name="Description" placeholder="Description">
                                             <script>
                                                 ClassicEditor
                                                     .create( document.querySelector( '#Description' ) )
@@ -67,7 +67,9 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="Description">Detail</label>
-                                            <textarea class="textarea" id="Detail" name="Detail"></textarea>
+                                            <textarea class="form-control" id="Detail" name="Detail">
+
+                                            </textarea>
                                             <script>
                                                 ClassicEditor
                                                     .create( document.querySelector( '#Detail' ) )
