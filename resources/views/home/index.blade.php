@@ -201,7 +201,6 @@
                     </div>
                     <div class="causes-text">
                         <h3>{{$rs->Title}}</h3>
-
                     </div>
                     <div class="carousel-btn">
                         <a class="btn btn-custom" href="{{route('content',['id'=>$rs->id])}}">View Now</a>

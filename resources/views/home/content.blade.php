@@ -33,10 +33,13 @@
                                             <img src="{{Storage::url($rs->Image)}}" style="width: 400px;height: 200px">
                                         </div>
                                     @endforeach
-                                    <h2>{{$data->Title}}</h2>
+                                    <h2>{{$data->Title}}</h2><br>
+                                    <h4>Description:</h4>
                                     <p>
                                         {!! $data->Description !!}
                                     </p>
+                                    <br>
+                                    <h4>Details:</h4>
                                     <p>
                                         {!! $data->Detail !!}
                                     </p>
