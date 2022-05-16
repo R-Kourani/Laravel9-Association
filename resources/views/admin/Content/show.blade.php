@@ -26,7 +26,12 @@
                                         </tr>
                                         <tr>
                                             <th>Menu</th>
+                                            @if($data->menu != NULL || $data->menu != 0)
                                             <td>{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($data->menu, $data->menu->Title)}}</td>
+                                            @else
+                                                <td>no parent</td>
+
+                                            @endif
                                         </tr>
                                         <tr>
                                             <th>Title</th>

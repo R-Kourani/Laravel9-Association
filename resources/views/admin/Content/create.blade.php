@@ -21,8 +21,9 @@
                                         @csrf
                                         <div class="form-group">
                                             <label >Parent Content</label>
-                                            <select class="form-control select2"name="menu_id">
-                                                @foreach($data as $rs)
+                                            <select class="form-control select2" name="menu_id">
+                                                <option value="0"> non </option>
+                                            @foreach($data as $rs)
                                                     <option value="{{$rs->id}}"> {{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs,$rs->Title)}}</option>
                                                 @endforeach
                                             </select>
@@ -45,7 +46,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="Description">Description</label>
-                                            <input class="form-control" type="text" id="Description" name="Description" placeholder="Description">
+                                            <textarea class="form-control" type="textarea" id="Description" name="Description" placeholder="Description"></textarea>
                                             <script>
                                                 ClassicEditor
                                                     .create( document.querySelector( '#Description' ) )

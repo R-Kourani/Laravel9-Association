@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('menu_id')->nullable();
+            $table->foreignId('menu_id')->nullable()->default(0);
             $table->foreignId('user_id')->nullable();
             $table->string('Title');
             $table->string('Type');

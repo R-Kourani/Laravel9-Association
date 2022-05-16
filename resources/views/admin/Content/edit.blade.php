@@ -20,6 +20,15 @@
                                     <form action="{{route('admin.content.update', ['id'=>$data->id])}}" role="form" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
+                                            <label >Parent Content</label>
+                                            <select name="menu_id" class="form-control>
+                                                @foreach($datalist as $rs)
+                                                    <option value="{{$rs->id}}" @if ($rs->id == $data->menu_id)selected="selected" @endif>
+                                                        {{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs,$rs->Title)}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="Title">Title</label>
                                             <input class="form-control" type="text" id="Title" name="Title" value="{{$data->Title}}">
                                         </div>

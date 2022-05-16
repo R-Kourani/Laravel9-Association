@@ -65,7 +65,8 @@
                         </div>
                         <div class="service-text">
                             <h3>Healthy Food</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            <p>The pain itself is a lot of pain. The phase is not easy to decorate with no fear of the torturer
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -76,7 +77,7 @@
                         </div>
                         <div class="service-text">
                             <h3>Pure Water</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            <p>The pain itself is a lot of pain. The phase is not easy to decorate with no fear of the torturer</p>
                         </div>
                     </div>
                 </div>
@@ -87,7 +88,7 @@
                         </div>
                         <div class="service-text">
                             <h3>Health Care</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            <p>The pain itself is a lot of pain. The phase is not easy to decorate with no fear of the torturer</p>
                         </div>
                     </div>
                 </div>
@@ -98,7 +99,7 @@
                         </div>
                         <div class="service-text">
                             <h3>Primary Education</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            <p>The pain itself is a lot of pain. The phase is not easy to decorate with no fear of the torturer</p>
                         </div>
                     </div>
                 </div>
@@ -109,7 +110,7 @@
                         </div>
                         <div class="service-text">
                             <h3>Residence Facilities</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            <p>The pain itself is a lot of pain. The phase is not easy to decorate with no fear of the torturer</p>
                         </div>
                     </div>
                 </div>
@@ -120,7 +121,7 @@
                         </div>
                         <div class="service-text">
                             <h3>Social Care</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            <p>The pain itself is a lot of pain. The phase is not easy to decorate with no fear of the torturer</p>
                         </div>
                     </div>
                 </div>
@@ -200,12 +201,9 @@
                     </div>
                     <div class="causes-text">
                         <h3>{{$rs->Title}}</h3>
-                        <p>{{$rs->Description}}</p>
+
                     </div>
-                    <div class="causes-btn">
-                        <a class="btn btn-custom">Learn More</a>
-                        <a class="btn btn-custom">Donate Now</a>
-                    </div>
+                    <a href="{{route('content',['id'=>$rs->id])}}"><span class="price-a">View Now</span></a>
                 </div>
                 @endforeach
             </div>
