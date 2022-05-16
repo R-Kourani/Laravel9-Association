@@ -34,13 +34,13 @@
 
                         <div class="tab-content">
                             <div id="tab-content-1" class="container tab-pane active">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae pellentesque turpis. Donec in hendrerit dui, vel blandit massa. Ut vestibulum suscipit cursus. Cras quis porta nulla, ut placerat risus. Aliquam nec magna eget velit luctus dictum. Phasellus et felis sed purus tristique dignissim. Morbi sit amet leo at purus accumsan pellentesque. Vivamus fermentum nisi vel dapibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                The pain itself is love, the main storage system. The life of the kids is ugly. It's in the bureau's housing, or the mass is flattering. As the arches take the course. There's no gate tomorrow, so that the laughter. No great pain needs to be wished. Phasellus et felis sed purus tristique dignissim. Morbi sit amet leo at purus accumsan pellentesque. We live without yeast or protein flats. The pain itself is love, the main storage system.
                             </div>
                             <div id="tab-content-2" class="container tab-pane fade">
-                                Sed tincidunt, magna ut vehicula volutpat, turpis diam condimentum justo, posuere congue turpis massa in mi. Proin ornare at massa at fermentum. Nunc aliquet sed nisi iaculis ornare. Nam semper tortor eget est egestas, eu sagittis nunc sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent bibendum sapien sed purus molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                But start, as the great vehicles of the weekend, the disgraceful sauce of the just, lay down the ugly mass in the mi. Proin to decorate at the mass at the warm Now the bananas, but only the arrows to decorate. For ever the torturer needs to be scared, the arrows are now the members of the EU. Sometimes the hunger and the unbelievable hunger in front of him, especially in the throat. Praesent bibendum sapien sed purus molestie malesuada. The pain itself is love, the main storage system.
                             </div>
                             <div id="tab-content-3" class="container tab-pane fade">
-                                Aliquam dolor odio, mollis sed feugiat sit amet, feugiat ut sapien. Nunc eu dignissim lorem. Suspendisse at hendrerit enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed condimentum semper turpis vel facilisis. Nunc vel faucibus orci. Mauris ut mauris rhoncus, efficitur nisi at, venenatis quam. Praesent egestas pretium enim sit amet finibus. Curabitur at erat molestie, tincidunt lorem eget, consequat ligula.
+                                I hate the pain, but the soft Now that's an asset. Suspendisse at hendrerit enim. Sometimes the hunger and the unbelievable hunger in front of him, especially in the throat. But the sauce is always ugly or easy. Now or the throat of the orcs. Mauris ut mauris Zen, it becomes nothing but at, how poisonous. It's the price of poverty that is important for the ends. The pain was at the annoyance, the vehicle needs to stop, the consequences were unconventional.
                             </div>
                         </div>
                     </div>
@@ -203,7 +203,9 @@
                         <h3>{{$rs->Title}}</h3>
 
                     </div>
-                    <a href="{{route('content',['id'=>$rs->id])}}"><span class="price-a">View Now</span></a>
+                    <div class="carousel-btn">
+                        <a class="btn btn-custom" href="{{route('content',['id'=>$rs->id])}}">View Now</a>
+                    </div>
                 </div>
                 @endforeach
             </div>

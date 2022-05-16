@@ -32,7 +32,7 @@
 <!-- Nav Bar Start -->
 <div class="navbar navbar-expand-lg bg-dark navbar-dark">
     <div class="container-fluid">
-        <a href="index.html" class="navbar-brand">Helpz</a>
+        <a href="index.html" class="navbar-brand">CHARITY</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,6 +44,24 @@
                 <a href="causes.html" class="nav-item nav-link">Causes</a>
                 <a href="event.html" class="nav-item nav-link">Events</a>
                 <a href="blog.html" class="nav-item nav-link">Blog</a>
+                <div class="nav-item dropdown">
+                    @php
+                      $mainMenu = \App\Http\Controllers\homecontroller::maincontentlist()
+                    @endphp
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Menu</a>
+                    <div class="dropdown-menu">
+                        @foreach($mainMenu as $rs)
+                        <a href="single.html" class="dropdown-item">{{$rs->Title}}</a>
+                         <div class="custom-menu">
+                             <div class="row">
+                                 @if(count($rs->children))
+                                     @include('home.MenuTree',['children' => $rs->children])
+                                 @endif
+                             </div>
+                         </div>
+                        @endforeach
+                    </div>
+                </div>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu">
