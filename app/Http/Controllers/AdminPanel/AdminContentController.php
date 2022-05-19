@@ -135,7 +135,10 @@ class AdminContentController extends Controller
     {
         //
         $data = Content::find($id);
-        Storage::delete($data->Image);
+        if ($data->Image && Storage::disk('public')->exists($data->Image)) {
+            Storage::delete($data->Image);
+
+        }
         $data->delete();
         return redirect('admin/content');
     }

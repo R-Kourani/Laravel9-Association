@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="single-content">
-                        <img src="{{Storage::url($rs->Image)}}" alt="Image" style="width:400px;height:300px";>
+                        <img src="{{Storage::url($rs->Image)}}" alt="Image" style="width:400px;height:300px">
                         <ul class="breadcrumb">
                             <li><a href="{{route('home')}}">Home</a></li>
                             <li class="active">/{{$menu->Title}}</li>

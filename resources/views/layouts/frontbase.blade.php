@@ -3,10 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title>@yield("title")</title>
+    <meta name="description" content="@yield("description")">
+    <meta name="keywords" content="@yield("keywords")">
+    <meta name="author" content="Roula Kourani">
+    <link rel="icon" type="image/x-icon" href="@yield("icon")">
 
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free Website Template" name="keywords">
     <meta content="Free Website Template" name="description">
+
 
     <!-- Favicon -->
     <link href="{{asset('assets')}}/img/about.jpg" rel="icon">

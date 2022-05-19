@@ -1,6 +1,6 @@
 @extends('layouts.frontbase')
 
-@section('title', $data->Tilte)
+@section('title', $data->Title)
 
 
 @section('content')
@@ -12,7 +12,9 @@
                             <h2>Detail Page</h2>
                         </div>
                         <div class="col-12">
-                            <a href="">{{$data->menu->Title}} Menu</a>
+                            <a href="{{route('home')}}">Home</a>
+                            <a href="">Menu</a>
+                            <a href="#">Content</a>
                             <a href="">{{$data->Title}}</a>
                         </div>
                     </div>
@@ -27,12 +29,7 @@
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="single-content">
-                                    <img src="{{Storage::url($data->Image)}}"  style="width: 400px;height: 200px"/>
-                                    @foreach($image as $rs)
-                                        <div class="carousel-item-b">
-                                            <img src="{{Storage::url($rs->Image)}}" style="width: 400px;height: 200px">
-                                        </div>
-                                    @endforeach
+                                    <img src="{{Storage::url($data->Image)}}"  style="width: 800px;height: 400px"/>
                                     <h2>{{$data->Title}}</h2><br>
                                     <h4>Description:</h4>
                                     <p>
@@ -43,6 +40,11 @@
                                     <p>
                                         {!! $data->Detail !!}
                                     </p>
+                                    @foreach($image as $rs)
+                                        <div class="carousel-item-b">
+                                            <img src="{{Storage::url($rs->Image)}}" style="width: 400px;height: 200px">
+                                        </div>
+                                    @endforeach
                                 </div>
                                 <div class="single-bio">
                                     <div class="single-bio-img">
