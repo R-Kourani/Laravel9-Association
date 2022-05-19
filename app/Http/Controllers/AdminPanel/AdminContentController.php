@@ -76,7 +76,7 @@ class AdminContentController extends Controller
         //
         $data= Content::find($id);
         return view('admin.content.show',[
-            'data' => $data
+            'data' => $data 
         ]);
     }
 

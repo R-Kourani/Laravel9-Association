@@ -39,23 +39,29 @@
                         <div class="contact-img">
                             <img src="{{asset('assets')}}/img/contact.jpg" alt="Image">
                         </div>
+                        @include ('home.messages')
                         <div class="contact-form">
                             <div id="success"></div>
-                            <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <form name="sentMessage" action="{{route('storemessage')}}" method="post">
+                                @csrf
                                 <div class="control-group">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                    <input type="text" class="form-control" id="name" placeholder="Name & Surname">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                    <input type="email" class="form-control" id="email" placeholder="Email">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                    <input type="text" class="form-control" id="phone" placeholder="Phone Number">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group">
-                                    <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <textarea class="form-control" id="message" placeholder="Message"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div>
