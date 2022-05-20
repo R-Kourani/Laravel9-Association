@@ -59,32 +59,68 @@
                                 </div>
                                 <div class="comment-form">
                                     <h2>Leave a comment</h2>
-                                    <form>
+                                    <form action="{{route('storecomment')}}" method="post">
+                                        @csrf
+                                        <input type="hidden" class="input" name="content_id" value="{{$data->id}}">
                                         <div class="form-group">
-                                            <label for="name">Name *</label>
-                                            <input type="text" class="form-control" id="name">
+                                            <input type="text" class="input" name="subject" placeholder="Subject">
                                         </div>
                                         <div class="form-group">
-                                            <label for="email">Email *</label>
-                                            <input type="email" class="form-control" id="email">
+                                            <textarea type="text"  class="input" name="review" cols="40" rows="5" placeholder="Your review"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label for="website">Website</label>
-                                            <input type="url" class="form-control" id="website">
+                                            <div class="input-rating">
+                                                <strong class="text-uppercase">Your Rating: </strong>
+                                                <div class="stars">
+                                                    <input type="radio" id="star5" name="rate" value="5" /><label for="star5"></label>
+                                                    <input type="radio" id="star4" name="rate" value="4" /><label for="star4"></label>
+                                                    <input type="radio" id="star3" name="rate" value="3" /><label for="star3"></label>
+                                                    <input type="radio" id="star2" name="rate" value="2" /><label for="star2"></label>
+                                                    <input type="radio" id="star1" name="rate" value="1" /><label for="star1"></label>
+                                                </div>
+                                            </div>
                                         </div>
-
                                         <div class="form-group">
-                                            <label for="message">Message *</label>
-                                            <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                                            @auth()
+                                                <input type="submit" value="Post Comment" class="btn btn-custom">
+                                            @else
+                                                <a href="/login" class="btn btn-custom"> To  Submit Your Review, Please Login</a>
+                                            @endauth
                                         </div>
-                                        <div class="form-group">
-                                            <input type="submit" value="Post Comment" class="btn btn-custom">
+                                        @include('home.messages')
+                                        <div class="col-lg-10">
+                                            <div class="sidebar">
+                                                 <div class="sidebar-widget">
+                                                     <h2 class="widget-title">Reviews</h2>
+                                                     <div class="recent-post">
+                                                         @foreach($reviews as $rs)
+                                                            <div class="post-item">
+                                                                <div class="post-text">
+                                                                    <h5><i class="fa fa-comment"></i> {{$rs->subject}}</h5>
+                                                                    <p>{{$rs->review}}</p>
+                                                                    <div class="post-meta">
+                                                                        <p><i class="fa fa-user"></i> By<a href=""> {{$rs->user->name}}</a></p>
+                                                                        <p><i class="fa fa-clock-o"></i><br>At<a href="">{{$rs->created_at}}</a></p>
+                                                                        <div class="review-rating">
+                                                                            <i class="fa fa-star @if($rs->rate<1) -o empty @endif"></i>
+                                                                            <i class="fa fa-star @if($rs->rate<2) -o empty @endif"></i>
+                                                                            <i class="fa fa-star @if($rs->rate<3) -o empty @endif"></i>
+                                                                            <i class="fa fa-star @if($rs->rate<4) -o empty @endif"></i>
+                                                                            <i class="fa fa-star @if($rs->rate<5) -o empty @endif"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
+                                                     </div>
+                                                 </div>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div >
          </section>   <!-- Single Post End-->
 @endsection
