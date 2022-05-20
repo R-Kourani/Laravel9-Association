@@ -69,12 +69,14 @@
                                                         <option>True</option>
                                                         <option>False</option>
                                                     </select>
+                                                    <button type="submit" class="btn btn-info">Update Comment</button>
                                                 </form>
                                             </td>
                                         </tr>
+
                                     </thead>
                                 </table>
-                                <button type="submit" class="btn btn-info">Update Comment</button>
+
                             </div>
                         </div>
                     </div>

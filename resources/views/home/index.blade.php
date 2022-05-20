@@ -193,15 +193,17 @@
                         <img src="{{Storage::url($rs->Image)}}" alt="Image" style="width:400px;height:300px";>
                     </div>
                     <div class="causes-progress">
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                <span>85%</span>
-                            </div>
+                        @php
+                            $average = $rs->comment->average('rate')
+                        @endphp
+                        <div class="content-rating">
+                            <i class="fa fa-star @if($average->rate<1) -o empty @endif"></i>
+                            <i class="fa fa-star @if($average->rate<2) -o empty @endif"></i>
+                            <i class="fa fa-star @if($average->rate<3) -o empty @endif"></i>
+                            <i class="fa fa-star @if($average->rate<4) -o empty @endif"></i>
+                            <i class="fa fa-star @if($average->rate<5) -o empty @endif"></i>
                         </div>
-                        <div class="progress-text">
-                            <p><strong>Raised:</strong> $100000</p>
-                            <p><strong>Goal:</strong> $50000</p>
-                        </div>
+                        ({{$rs->comment->count('id')}})
                     </div>
                     <div class="causes-text">
                         <h3>{{$rs->Title}}</h3>
