@@ -64,7 +64,7 @@
                                             <td>
                                                 <form action="{{route('admin.comment.update', ['id'=>$data->id])}}" role="form" method="post" >
                                                     @csrf
-                                                    <select>
+                                                    <select name="status">
                                                         <option selected>{{$data->status}}</option>
                                                         <option>True</option>
                                                         <option>False</option>

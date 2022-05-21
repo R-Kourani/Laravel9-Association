@@ -5,13 +5,23 @@
             <div class="col-md-8">
                 <div class="top-bar-left">
                     <div class="text">
-                        <i class="fa fa-phone-alt"></i>
-                        <p>+123 456 7890</p>
+                        @auth()
+                            <div>
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <strong class="text-uppercase"><p>{{Auth::user()->name}}</p></strong>
+                            <div class="text">
+                                <i class="fa fa-user"></i>
+                                <a href="/logoutuser" class="text-uppercase"><p>Logout</p></a>
+                            </div>
+                        @endauth
                     </div>
-                    <div class="text">
-                        <i class="fa fa-envelope"></i>
-                        <p>info@example.com</p>
-                    </div>
+                    @guest()
+                        <div class="text">
+                            <i class="fa fa-user"></i>
+                            <a href="/loginuser" class="text-uppercase"><p>Login</p></a> <p> / </p>  <a href="/registeruser" class="text-uppercase"><p>Join</p></a>
+                        </div>
+                    @endguest
                 </div>
             </div>
             <div class="col-md-4">

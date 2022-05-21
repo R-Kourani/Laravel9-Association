@@ -58,7 +58,7 @@
                                     </div>
                                     <div>
                                         @php
-                                           $average = $data->comment->average('rate')
+                                           $average = $data->comment->average('rate');
                                         @endphp
                                         <div class="content-rating">
                                             <i class="fa fa-star @if($average->rate<1) -o empty @endif"></i>

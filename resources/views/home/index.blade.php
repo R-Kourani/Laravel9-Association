@@ -192,19 +192,6 @@
                     <div class="causes-img">
                         <img src="{{Storage::url($rs->Image)}}" alt="Image" style="width:400px;height:300px";>
                     </div>
-                    <div class="causes-progress">
-                        @php
-                            $average = $rs->comment->average('rate')
-                        @endphp
-                        <div class="content-rating">
-                            <i class="fa fa-star @if($average->rate<1) -o empty @endif"></i>
-                            <i class="fa fa-star @if($average->rate<2) -o empty @endif"></i>
-                            <i class="fa fa-star @if($average->rate<3) -o empty @endif"></i>
-                            <i class="fa fa-star @if($average->rate<4) -o empty @endif"></i>
-                            <i class="fa fa-star @if($average->rate<5) -o empty @endif"></i>
-                        </div>
-                        ({{$rs->comment->count('id')}})
-                    </div>
                     <div class="causes-text">
                         <h3>{{$rs->Title}}</h3>
                     </div>
