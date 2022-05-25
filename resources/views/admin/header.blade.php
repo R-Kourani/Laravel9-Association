@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">CHARITY</a>
+            <a class="navbar-brand" href="{{route('admin.index')}}">My Admin Panel</a>
         </div>
 
         <div class="header-right">
