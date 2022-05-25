@@ -20,7 +20,7 @@
 <div class="container">
     <div class="row text-center " style="padding-top:100px;">
         <div class="col-md-12">
-            <img src="{{asset('assets')}}/admin/img/login.jpeg" style="width: 400px">
+            <img src="{{asset('assets')}}/admin/img/login1.png" style="width: 350px" height="200px">
         </div>
     </div>
     <div class="row ">
