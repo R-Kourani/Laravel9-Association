@@ -3,22 +3,24 @@
 @section('title', 'Show Message')
 
 @section('content')
-        <!-- /. NAV SIDE  -->
-        <div id="page-wrapper">
-            <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="page-head-line">Show Message</h1>
+    <!-- /. NAV SIDE  -->
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                </div>
+            </div>
+            <!-- /. ROW  -->
+            <div class="col-sm-12">
+                <!--   Kitchen Sink -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Show Message</h3>
                     </div>
-                    <div class="panel panel-default">
-
-                        <div class="panel-heading">
-                             Detail Message Data
-                        </div>
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
+                    <div class="card-body">
+                        <div class="table table-bordered">
+                            <table class="table table-striped table-bordered table-hover">
+                                <thead>
                                         <tr>
                                             <th style="width:200px">Id</th>
                                             <td>{{$data->id}}</td>
@@ -71,15 +73,15 @@
                                                 </form>
                                             </td>
                                         </tr>
-                                    </thead>
-                                </table>
-                            </div>
+                                </thead>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <!-- /. PAGE INNER  -->
             </div>
-            <!-- /. PAGE WRAPPER  -->
+                <!-- /. PAGE INNER  -->
         </div>
+            <!-- /. PAGE WRAPPER  -->
+    </div>
 
 @endsection

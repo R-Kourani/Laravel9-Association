@@ -42,26 +42,26 @@
                         @include ('home.messages')
                         <div class="contact-form">
                             <div id="success"></div>
-                            <form name="sentMessage" action="{{route('storemessage')}}" method="post">
+                            <form  action="{{route('storemessage')}}" method="post">
                                 @csrf
                                 <div class="control-group">
-                                    <input type="text" class="form-control" id="name" placeholder="Name & Surname">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Name & Surname">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group">
-                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group">
-                                    <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+                                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group">
-                                    <textarea class="form-control" id="message" placeholder="Message"></textarea>
+                                    <textarea type="text" class="form-control" id="message" name="message" placeholder="Message"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div>

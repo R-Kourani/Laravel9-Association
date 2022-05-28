@@ -94,7 +94,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            @auth()
+                                            @auth
                                                 <input type="submit" value="Post Comment" class="btn btn-custom">
                                             @else
                                                 <a href="/login" class="btn btn-custom"> To  Submit Your Review, Please Login</a>

@@ -195,6 +195,17 @@
                     <div class="causes-text">
                         <h3>{{$rs->Title}}</h3>
                     </div>
+                    @php
+                        $average = $rs->comment->average('rate');
+                    @endphp
+                    <div class="content-rating">
+                        <i class="fa fa-star @if($average<1) -o empty @endif"></i>
+                        <i class="fa fa-star @if($average<2) -o empty @endif"></i>
+                        <i class="fa fa-star @if($average<3) -o empty @endif"></i>
+                        <i class="fa fa-star @if($average<4) -o empty @endif"></i>
+                        <i class="fa fa-star @if($average<5) -o empty @endif"></i>
+                        ({{$rs->comment->count('id')}})
+                    </div>
                     <div class="carousel-btn">
                         <a class="btn btn-custom" href="{{route('content',['id'=>$rs->id])}}">View Now</a>
                     </div>
