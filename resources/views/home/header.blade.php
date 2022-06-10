@@ -9,7 +9,19 @@
                             <div>
                                 <i class="fa fa-user"></i>
                             </div>
-                            <strong class="text-uppercase"><p>{{Auth::user()->name}}</p></strong>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><strong class="text-uppercase"><p>{{Auth::user()->name}}</p></strong></a>
+                                <div class="dropdown-menu">
+                                    <br>
+                                    <br>
+                                    <br>
+                                        <li><a href="{{route('userpanel.index')}}"><i class="fa fa-user"></i> My Account</a></li>
+                                        <li><a href="#"><i class="fa fa-heart"></i> My Volunteers</a></li>
+                                        <li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
+                                        <li><a href="#"><i class="fa fa-database"></i> My Content</a></li>
+                                        <li><a href="/logout"><i class="fa fa-unlock-alt"></i> Logout</a></li>
+                                </div>
+                            </div>
                             <div class="text">
                                 <i class="fa fa-user"></i>
                                 <a href="/logoutuser" class="text-uppercase"><p>Logout</p></a>
