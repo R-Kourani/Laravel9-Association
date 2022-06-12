@@ -1,18 +1,18 @@
 @extends('layouts.adminwindow')
 
-@section('title', 'Show Comment')
+@section('title', 'Show Payment')
 
 @section('content')
         <!-- /. NAV SIDE  -->
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Show Comment</h1>
+                        <h1 class="page-head-line">Show Payment</h1>
                     </div>
                     <div class="panel panel-default">
 
                         <div class="panel-heading">
-                             Detail Comment Data
+                             Payment Detail
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -23,28 +23,32 @@
                                             <td>{{$data->id}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Content</th>
-                                            <td>{{$data->content->Title}}</td>
-                                        </tr>
-                                        <tr>
                                             <th>Name</th>
-                                            <td>{{$data->user->name}}</td>
+                                            <td>{{$data->name}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Subject</th>
-                                            <td>{{$data->subject}}</td>
+                                            <th>Card Number</th>
+                                            <td>{{$data->card_number}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Review</th>
-                                            <td>{{$data->review}}</td>
+                                            <th>Month</th>
+                                            <td>{{$data->month}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Rate</th>
-                                            <td>{!!$data->rate!!}</td>
+                                            <th>Year</th>
+                                            <td>{{$data->year}}</td>
                                         </tr>
                                         <tr>
-                                            <th>IP Number</th>
-                                            <td>{!!$data->IP!!}</td>
+                                            <th>CVV</th>
+                                            <td>{!!$data->cvv!!}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Amount</th>
+                                            <td>{{$data->amount}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Note</th>
+                                            <td>{{$data->note}}</td>
                                         </tr>
                                         <tr>
                                             <th>Status</th>
@@ -61,21 +65,19 @@
                                         <tr>
                                             <th>Admin Note:</th>
                                             <td>
-                                                <form action="{{route('admin.comment.update', ['id'=>$data->id])}}" role="form" method="post" >
+                                                <form action="{{route('admin.payment.update', ['id'=>$data->id])}}" role="form" method="post" >
                                                     @csrf
                                                     <select name="status">
                                                         <option selected>{{$data->status}}</option>
-                                                        <option>True</option>
-                                                        <option>False</option>
+                                                        <option>Pending</option>
+                                                        <option>Paid</option>
                                                     </select>
-                                                    <button type="submit" class="btn btn-info">Update Comment</button>
+                                                    <button type="submit" class="btn btn-info">Update Payment</button>
                                                 </form>
                                             </td>
                                         </tr>
-
                                     </thead>
                                 </table>
-
                             </div>
                         </div>
                     </div>

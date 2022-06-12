@@ -56,19 +56,6 @@
                                             {{$data->Aim}}
                                         </p>
                                     </div>
-                                    <div>
-                                        @php
-                                           $average = $data->comment->average('rate');
-                                        @endphp
-                                        <div class="content-rating">
-                                            <i class="fa fa-star @if($average->rate<1) -o empty @endif"></i>
-                                            <i class="fa fa-star @if($average->rate<2) -o empty @endif"></i>
-                                            <i class="fa fa-star @if($average->rate<3) -o empty @endif"></i>
-                                            <i class="fa fa-star @if($average->rate<4) -o empty @endif"></i>
-                                            <i class="fa fa-star @if($average->rate<5) -o empty @endif"></i>
-                                        </div>
-                                        <a href="#">{{$data->comment->count('id')}} \ {{number_format($average,1)}}  Review(S) \ Add Review</a>
-                                    </div>
                                 </div>
                                 <div class="comment-form">
                                     <h2>Leave a comment</h2>

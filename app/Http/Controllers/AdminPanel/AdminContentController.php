@@ -17,7 +17,7 @@ class AdminContentController extends Controller
      */
     public function index()
     {
-        //
+
         $data= Content::all();
         return view('admin.content.index',[
             'data' => $data
@@ -76,7 +76,7 @@ class AdminContentController extends Controller
         //
         $data= Content::find($id);
         return view('admin.content.show',[
-            'data' => $data 
+            'data' => $data
         ]);
     }
 

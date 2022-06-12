@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,6 +24,14 @@ class UserController extends Controller
         $comments = Comment::where('user_id', '=', Auth::id())->get();
         return view("home.user.comments",[
             'comments'=>$comments
+        ]);
+    }
+
+    public function payments()
+    {
+        $payments = Payment::where('user_id', '=', Auth::id())->get();
+        return view("home.user.payments",[
+            'payments'=>$payments
         ]);
     }
 

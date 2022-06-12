@@ -1,6 +1,6 @@
 @extends('layouts.frontbase')
 
-@section('title', 'User Comments & Reviews')
+@section('title', 'User Payments')
 
 
 
@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-12">
                     <a href="{{route('home')}}">Home</a>
-                    <a href="">User Comments & Reviews</a>
+                    <a href="">User Payments</a>
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
                 <div class="contact">
                     <div class="container">
                         <div class="section-header text-center">
-                            <h2>User Comments & Reviews</h2>
+                            <h2>User Payments</h2>
                         </div>
                         <div class="contact-form">
                             <div id="success"></div>
@@ -41,25 +41,21 @@
                                 <thead>
                                 <tr>
                                     <th style="width:10px">Id</th>
-                                    <th>Content</th>
-                                    <th>Subject</th>
-                                    <th>Review</th>
-                                    <th>Rate</th>
+                                    <th>Name</th>
+                                    <th>Amount</th>
+                                    <th>Note</th>
                                     <th>Status</th>
-                                    <th style="width: 40px">Delete</th>
+                                    <th style="width: 40px">Show</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($comments as $rs )
+                                @foreach($data as $rs )
                                     <tr>
                                         <td>{{$rs->id}}</td>
-                                        <td><a href={{route('content', ['id'=>$rs->content->id])}}>{{$rs->content->Title}} </a></td>
-                                        <td>{{$rs->subject}}</td>
-                                        <td>{{$rs->review}}</td>
-                                        <td>{{$rs->rate}}</td>
+                                        <td>{{$rs->name}}</td>
+                                        <td>{{$rs->amount}}</td>
+                                        <td>{{$rs->note}}</td>
                                         <td>{{$rs->status}}</td>
-                                        <td><a href="{{route('userpanel.reviewdestroy',['id'=>$rs->id])}}" class="btn btn-xs btn-danger"
-                                               onclick="return confirm('Deleting!! Are you sure?')">Delete</a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

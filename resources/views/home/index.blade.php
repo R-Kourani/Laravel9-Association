@@ -228,30 +228,33 @@
                         </div>
                         <div class="donate-text">
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non. Aliquam metus tortor, auctor id gravida, viverra quis sem. Curabitur non nisl nec nisi maximus. Aenean convallis porttitor. Aliquam interdum at lacus non blandit.
+                                The pain itself is a lot of pain. My price does not change. It's easy to choose not to decorate the classroom. Some fear the torturer, the author of this pregnant, cartoon who I'm not the biggest players. Aenean convallis porttitor. But sometimes the lake is not flattering.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="donate-form">
-                        <form>
+                        @include('home.messages')
+                        <form action="{{route("payment")}}" method="post">
+                            @csrf
                             <div class="control-group">
                                 <input type="text" class="form-control" placeholder="Name" required="required" />
                             </div>
                             <div class="control-group">
-                                <input type="email" class="form-control" placeholder="Email" required="required" />
+                                <input type="text" class="form-control" placeholder="Card Number" required="required" />
                             </div>
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-custom active">
-                                    <input type="radio" name="options" checked> $10
-                                </label>
-                                <label class="btn btn-custom">
-                                    <input type="radio" name="options"> $20
-                                </label>
-                                <label class="btn btn-custom">
-                                    <input type="radio" name="options"> $30
-                                </label>
+                            <div class="control-group">
+                                <input type="text" class="form-control" placeholder="Month" required="required" />
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control" placeholder="Year" required="required" />
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control" placeholder="CVV" required="required" />
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control" placeholder="amount" required="required" />
                             </div>
                             <div>
                                 <button class="btn btn-custom" type="submit">Donate Now</button>
