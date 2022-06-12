@@ -18,12 +18,11 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string( 'name',20)->nullable();
             $table->integer( 'card_number')->nullable();
-            $table->integer( 'month')->nullable();
-            $table->integer( 'year')->nullable();
+            $table->string( 'exp_date')->nullable();
             $table->integer( 'cvv')->nullable();
             $table->integer( 'amount')->nullable();
             $table->string( 'note',20)->nullable();
-            $table->string( 'status',5);
+            $table->string( 'status',5)->default('New');
             $table->timestamps();
         });
     }

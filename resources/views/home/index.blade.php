@@ -183,8 +183,8 @@
     <div class="causes">
         <div class="container">
             <div class="section-header text-center">
-                <p>Popular Causes</p>
-                <h2>Let's know about charity causes around the world</h2>
+                <p>Upcoming Events</p>
+                <h2>Be ready for our upcoming charity events</h2>
             </div>
             <div class="owl-carousel causes-carousel">
                 @foreach($contentlist as $rs)
@@ -195,19 +195,18 @@
                     <div class="causes-text">
                         <h3>{{$rs->Title}}</h3>
                     </div>
-                    @php
-                        $average = $rs->comment->average('rate');
-                    @endphp
                     <div class="content-rating">
-                        <i class="fa fa-star @if($average<1) -o empty @endif"></i>
-                        <i class="fa fa-star @if($average<2) -o empty @endif"></i>
-                        <i class="fa fa-star @if($average<3) -o empty @endif"></i>
-                        <i class="fa fa-star @if($average<4) -o empty @endif"></i>
-                        <i class="fa fa-star @if($average<5) -o empty @endif"></i>
+                        <i @if(floor($rs->comment->avg('rate'))>=1) class="fa fa-star" @else class="fa fa-star-o" @endif></i>
+                        <i @if(floor($rs->comment->avg('rate'))>=2) class="fa fa-star" @else class="fa fa-star-o" @endif></i>
+                        <i @if(floor($rs->comment->avg('rate'))>=3) class="fa fa-star" @else class="fa fa-star-o" @endif></i>
+                        <i @if(floor($rs->comment->avg('rate'))>=4) class="fa fa-star" @else class="fa fa-star-o" @endif></i>
+                        <i @if(floor($rs->comment->avg('rate'))>=5) class="fa fa-star" @else class="fa fa-star-o" @endif></i>
+
                         ({{$rs->comment->count('id')}})
                     </div>
                     <div class="carousel-btn">
                         <a class="btn btn-custom" href="{{route('content',['id'=>$rs->id])}}">View Now</a>
+                        <a class="btn btn-custom" href="{{route('payment',['id'=>$rs->id])}}">Donate Now</a>
                     </div>
                 </div>
                 @endforeach
@@ -216,107 +215,6 @@
     </div>
     <!-- Causes End -->
 
-    <!-- Donate Start -->
-    <div class="donate" data-parallax="scroll" data-image-src="{{asset('assets')}}/img/donate.jpg">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="donate-content">
-                        <div class="section-header">
-                            <p>Donate Now</p>
-                            <h2>Let's donate to needy people for better lives</h2>
-                        </div>
-                        <div class="donate-text">
-                            <p>
-                                The pain itself is a lot of pain. My price does not change. It's easy to choose not to decorate the classroom. Some fear the torturer, the author of this pregnant, cartoon who I'm not the biggest players. Aenean convallis porttitor. But sometimes the lake is not flattering.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="donate-form">
-                        @include('home.messages')
-                        <form action="{{route("payment")}}" method="post">
-                            @csrf
-                            <div class="control-group">
-                                <input type="text" class="form-control" placeholder="Name" required="required" />
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control" placeholder="Card Number" required="required" />
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control" placeholder="Month" required="required" />
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control" placeholder="Year" required="required" />
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control" placeholder="CVV" required="required" />
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control" placeholder="amount" required="required" />
-                            </div>
-                            <div>
-                                <button class="btn btn-custom" type="submit">Donate Now</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Donate End -->
-
-    <!-- Event Start -->
-    <div class="event">
-        <div class="container">
-            <div class="section-header text-center">
-                <p>Upcoming Events</p>
-                <h2>Be ready for our upcoming charity events</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="event-item">
-                        <img src="{{asset('assets')}}/img/event-1.jpg" alt="Image">
-                        <div class="event-content">
-                            <div class="event-meta">
-                                <p><i class="fa fa-calendar-alt"></i>01-Jan-45</p>
-                                <p><i class="far fa-clock"></i>8:00 - 10:00</p>
-                                <p><i class="fa fa-map-marker-alt"></i>New York</p>
-                            </div>
-                            <div class="event-text">
-                                <h3>Lorem ipsum dolor sit</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                                </p>
-                                <a class="btn btn-custom" href="">Join Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="event-item">
-                        <img src="{{asset('assets')}}/img/event-2.jpg" alt="Image">
-                        <div class="event-content">
-                            <div class="event-meta">
-                                <p><i class="fa fa-calendar-alt"></i>01-Jan-45</p>
-                                <p><i class="far fa-clock"></i>8:00 - 10:00</p>
-                                <p><i class="fa fa-map-marker-alt"></i>New York</p>
-                            </div>
-                            <div class="event-text">
-                                <h3>Lorem ipsum dolor sit</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                                </p>
-                                <a class="btn btn-custom" href="">Join Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Event End -->
 
     <!-- Team Start -->
     <div class="team">
@@ -399,46 +297,6 @@
     </div>
     <!-- Team End -->
 
-    <!-- Volunteer Start -->
-    <div class="volunteer" data-parallax="scroll" data-image-src="{{asset('assets')}}/img/volunteer.jpg">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <div class="volunteer-form">
-                        <form>
-                            <div class="control-group">
-                                <input type="text" class="form-control" placeholder="Name" required="required" />
-                            </div>
-                            <div class="control-group">
-                                <input type="email" class="form-control" placeholder="Email" required="required" />
-                            </div>
-                            <div class="control-group">
-                                <textarea class="form-control" placeholder="Why you want to become a volunteer?" required="required"></textarea>
-                            </div>
-                            <div>
-                                <button class="btn btn-custom" type="submit">Become a volunteer</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="volunteer-content">
-                        <div class="section-header">
-                            <p>Become A Volunteer</p>
-                            <h2>Let’s make a difference in the lives of others</h2>
-                        </div>
-                        <div class="volunteer-text">
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non. Aliquam metus tortor, auctor id gravida, viverra quis sem. Curabitur non nisl nec nisi maximus. Aenean convallis porttitor. Aliquam interdum at lacus non blandit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Volunteer End -->
-
     <!-- Testimonial Start -->
     <div class="testimonial">
         <div class="container">
@@ -508,105 +366,5 @@
     </div>
     <!-- Testimonial End -->
 
-    <!-- Contact Start -->
-    <div class="contact">
-        <div class="container">
-            <div class="section-header text-center">
-                <p>Get In Touch</p>
-                <h2>Contact for any query</h2>
-            </div>
-            <div class="contact-img">
-                <img src="{{asset('assets')}}/img/contact.jpg" alt="Image">
-            </div>
-            <div class="contact-form">
-                <div id="success"></div>
-                <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                    <div class="control-group">
-                        <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div>
-                        <button class="btn btn-custom" type="submit" id="sendMessageButton">Send Message</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
 
-    <!-- Blog Start -->
-    <div class="blog">
-        <div class="container">
-            <div class="section-header text-center">
-                <p>Our Blog</p>
-                <h2>Latest news & articles directly from our blog</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{asset('assets')}}/img/blog-1.jpg" alt="Image">
-                        </div>
-                        <div class="blog-text">
-                            <h3><a href="#">Lorem ipsum dolor sit</a></h3>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                            </p>
-                        </div>
-                        <div class="blog-meta">
-                            <p><i class="fa fa-user"></i><a href="">Admin</a></p>
-                            <p><i class="fa fa-comments"></i><a href="">15 Comments</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{asset('assets')}}/img/blog-2.jpg" alt="Image">
-                        </div>
-                        <div class="blog-text">
-                            <h3><a href="#">Lorem ipsum dolor sit</a></h3>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                            </p>
-                        </div>
-                        <div class="blog-meta">
-                            <p><i class="fa fa-user"></i><a href="">Admin</a></p>
-                            <p><i class="fa fa-comments"></i><a href="">15 Comments</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{asset('assets')}}/img/blog-3.jpg" alt="Image">
-                        </div>
-                        <div class="blog-text">
-                            <h3><a href="#">Lorem ipsum dolor sit</a></h3>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                            </p>
-                        </div>
-                        <div class="blog-meta">
-                            <p><i class="fa fa-user"></i><a href="">Admin</a></p>
-                            <p><i class="fa fa-comments"></i><a href="">15 Comments</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Blog End -->
 @endsection

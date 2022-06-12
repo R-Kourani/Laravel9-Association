@@ -2,6 +2,8 @@
 
 @section('title', $menu->Title . ' Content')
 
+@section('slider')
+    @include('home.slider')
 
 @section('content')
 

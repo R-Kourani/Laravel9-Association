@@ -18,14 +18,8 @@
                                         <li><a href="{{route('userpanel.index')}}"><i class="fa fa-user"></i> My Account</a></li>
                                         <li><a href="{{route('userpanel.payments')}}"><i class="fa fa-heart"></i> My Donations</a></li>
                                         <li><a href="{{route('userpanel.reviews')}}"><i class="fa fa-heart"></i> My Reviews</a></li>
-                                        <li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
-                                        <li><a href="#"><i class="fa fa-database"></i> My Content</a></li>
-                                        <li><a href="/logout"><i class="fa fa-unlock-alt"></i> Logout</a></li>
+                                        <li><a href="/logoutuser"><i class="fa fa-unlock-alt"></i> Logout</a></li>
                                 </div>
-                            </div>
-                            <div class="text">
-                                <i class="fa fa-user"></i>
-                                <a href="/logoutuser" class="text-uppercase"><p>Logout</p></a>
                             </div>
                         @endauth
                     </div>
@@ -65,9 +59,6 @@
                 <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
                 <a href="{{route('about')}}" class="nav-item nav-link">About</a>
                 <a href="{{route('references')}}" class="nav-item nav-link">References</a>
-                <a href="causes.html" class="nav-item nav-link">Causes</a>
-                <a href="event.html" class="nav-item nav-link">Events</a>
-                <a href="blog.html" class="nav-item nav-link">Blog</a>
                 <div class="nav-item dropdown">
                     @php
                       $mainMenu = \App\Http\Controllers\homecontroller::maincontentlist()
@@ -75,7 +66,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Menu</a>
                     <div class="dropdown-menu">
                         @foreach($mainMenu as $rs)
-                        <a href="single.html" class="dropdown-item">{{$rs->Title}}</a>
+                        <a href="{{route('menucontent',['id' => $rs->id , 'slug' => $rs->Title] )}}" class="dropdown-item">{{$rs->Title}}</a>
                          <div class="custom-menu">
                              <div class="row">
                                  @if(count($rs->children))
@@ -86,18 +77,10 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu">
-                        <a href="single.html" class="dropdown-item">Detail Page</a>
-                        <a href="service.html" class="dropdown-item">What We Do</a>
-                        <a href="team.html" class="dropdown-item">Meet The Team</a>
-                        <a href="donate.html" class="dropdown-item">Donate Now</a>
-                        <a href="volunteer.html" class="dropdown-item">Become A Volunteer</a>
-                    </div>
-                </div>
                 <a href="{{route('faq')}}" class="nav-item nav-link">FAQ</a>
                 <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
+                <a href="{{route('payment')}}" class="nav-item nav-link">Donate</a>
+
             </div>
         </div>
     </div>

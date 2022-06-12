@@ -12,6 +12,13 @@
     <meta content="Free Website Template" name="keywords">
     <meta content="Free Website Template" name="description">
 
+    <!-- default styles -->
+    <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css" />
+
+    <!-- with v4.1.0 Krajee SVG theme is used as default (and must be loaded as below) - include any of the other theme CSS files as mentioned below (and change the theme property of the plugin) -->
+    <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/themes/krajee-svg/theme.css" media="all" rel="stylesheet" type="text/css" />
+
+
 
     <!-- Favicon -->
     <link href="{{asset('assets')}}/img/about.jpg" rel="icon">

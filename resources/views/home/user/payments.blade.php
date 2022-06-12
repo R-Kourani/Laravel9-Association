@@ -45,13 +45,12 @@
                                     <th>Amount</th>
                                     <th>Note</th>
                                     <th>Status</th>
-                                    <th style="width: 40px">Show</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($data as $rs )
+                                @foreach($payments as $rs )
                                     <tr>
-                                        <td>{{$rs->id}}</td>
+                                        <td>{{$rs->user_id}}</td>
                                         <td>{{$rs->name}}</td>
                                         <td>{{$rs->amount}}</td>
                                         <td>{{$rs->note}}</td>

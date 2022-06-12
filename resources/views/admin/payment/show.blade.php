@@ -31,12 +31,8 @@
                                             <td>{{$data->card_number}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Month</th>
-                                            <td>{{$data->month}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Year</th>
-                                            <td>{{$data->year}}</td>
+                                            <th>Expiration Date</th>
+                                            <td>{{$data->exp_date}}</td>
                                         </tr>
                                         <tr>
                                             <th>CVV</th>

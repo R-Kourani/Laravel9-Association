@@ -39,11 +39,11 @@
                         <div class="contact-img">
                             <img src="{{asset('assets')}}/img/contact.jpg" alt="Image">
                         </div>
-                        @include ('home.messages')
                         <div class="contact-form">
                             <div id="success"></div>
                             <form  action="{{route('storemessage')}}" method="post">
                                 @csrf
+                                @include ('home.messages')
                                 <div class="control-group">
                                     <input type="text" name="name" class="form-control" id="name" placeholder="Name & Surname">
                                     <p class="help-block text-danger"></p>
